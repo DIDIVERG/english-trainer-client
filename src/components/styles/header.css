@@ -1,21 +1,8 @@
-.navbar-brand {
-    color: white;
-    position: sticky;
-}
-.lorem {
-    z-index: 0;
-}
-.header{
-    position: sticky;
+.backdrop {
+    position: fixed;
     top: 0;
-    height: 5vh;
-    background-color: #1E1F22 ;
-    z-index: 2;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.brand {
-    color: white;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
 }
