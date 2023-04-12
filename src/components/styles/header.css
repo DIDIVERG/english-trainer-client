@@ -7,7 +7,12 @@
 .navbar {
     height: 60px; /* ваше значение для высоты */
 }
-
+.fixed-add-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+}
 .navbar-nav {
     display: flex;
     align-items: center;

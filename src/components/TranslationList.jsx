@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { ListGroup, Button, Modal, Form } from 'react-bootstrap';
 import { useMediaQuery } from 'react-responsive';
 import './styles/transationlist.css';
+import {FaPlus} from "@react-icons/all-files/fa/FaPlus";
 
 function TranslationListItem({ word, translation, onDelete, onEdit }) {
     const [showModal, setShowModal] = useState(false);
@@ -82,6 +83,9 @@ function TranslationListItem({ word, translation, onDelete, onEdit }) {
 
 function TranslationList({ translations }) {
     const [list, setList] = useState(translations);
+    const [showAddModal, setShowAddModal] = useState(false);
+    const [newWord, setNewWord] = useState('');
+    const [newTranslation, setNewTranslation] = useState('');
 
     const handleDeleteTranslation = (index) => {
         const newList = [...list];
@@ -95,21 +99,75 @@ function TranslationList({ translations }) {
         setList(newList);
     };
 
+    const handleAddTranslation = () => {
+        const newTranslationObj = { word: newWord, translation: newTranslation };
+        setList([...list, newTranslationObj]);
+        setNewWord('');
+        setNewTranslation('');
+        setShowAddModal(false);
+    };
+
     return (
-        <ListGroup className="list-group">
-            {list.map((translation, index) => (
-                <TranslationListItem
-                    key={index}
-                    word={translation.word}
-                    translation={translation.translation}
-                    onDelete={() => handleDeleteTranslation(index)}
-                    onEdit={(newWord, newTranslation) =>
-                        handleEditTranslation(index, newWord, newTranslation)
-                    }
-                />
-            ))}
-        </ListGroup>
+        <div>
+            <ListGroup className="list-group">
+                {list.map((translation, index) => (
+                    <TranslationListItem
+                        key={index}
+                        word={translation.word}
+                        translation={translation.translation}
+                        onDelete={() => handleDeleteTranslation(index)}
+                        onEdit={(newWord, newTranslation) =>
+                            handleEditTranslation(index, newWord, newTranslation)
+                        }
+                    />
+                ))}
+            </ListGroup>
+
+            <div className="fixed-add-button">
+                <Button variant="success" onClick={() => setShowAddModal(true)}>
+                    <FaPlus/>
+                </Button>
+            </div>
+
+            <Modal show={showAddModal} onHide={() => setShowAddModal(false)}>
+                <Modal.Header closeButton>
+                    <Modal.Title>Добавление нового перевода</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    <Form>
+                        <Form.Group controlId="formWord">
+                            <Form.Label>Слово</Form.Label>
+                            <Form.Control
+                                type="text"
+                                placeholder="Введите слово"
+                                value={newWord}
+                                onChange={(e) => setNewWord(e.target.value)}
+                            />
+                        </Form.Group>
+
+                        <Form.Group controlId="formTranslation">
+                            <Form.Label>Перевод</Form.Label>
+                            <Form.Control
+                                type="text"
+                                placeholder="Введите перевод"
+                                value={newTranslation}
+                                onChange={(e) => setNewTranslation(e.target.value)}
+                            />
+                        </Form.Group>
+                    </Form>
+                </Modal.Body>
+                <Modal.Footer>
+                    <Button variant="secondary" onClick={() => setShowAddModal(false)}>
+                        Отмена
+                    </Button>
+                    <Button variant="primary" onClick={handleAddTranslation}>
+                        Добавить перевод
+                    </Button>
+                </Modal.Footer>
+            </Modal>
+        </div>
     );
 }
 
-export default TranslationList
+
+export default TranslationList;
