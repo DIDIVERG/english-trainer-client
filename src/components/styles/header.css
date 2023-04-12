@@ -5,7 +5,7 @@
 }
 
 .navbar {
-    height: 60px; /* ваше значение для высоты */
+    height: 60px;
 }
 .fixed-add-button {
     position: fixed;

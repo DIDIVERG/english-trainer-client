@@ -129,7 +129,7 @@ function TranslationList({ translations }) {
                 </Button>
             </div>
 
-            <Modal show={showAddModal} onHide={() => setShowAddModal(false)}>
+            <Modal style={{ marginTop: '20vh' }} show={showAddModal} onHide={() => setShowAddModal(false)}>
                 <Modal.Header closeButton>
                     <Modal.Title>Добавление нового перевода</Modal.Title>
                 </Modal.Header>
