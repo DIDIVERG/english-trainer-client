@@ -19,24 +19,15 @@ function Header() {
                 </Navbar.Toggle>
                 <Navbar.Collapse id="navbar-nav">
                     <Nav className="me-auto">
-                        <NavLink exact to="/" className="nav-link" activeClassName="active" onClick={handleClose}>
+                        <NavLink exact to="/dictionary" className="nav-link" activeClassName="active" onClick={handleClose}>
                             Dictionary
                         </NavLink>
-                        <NavLink to="/about" className="nav-link" activeClassName="active" onClick={handleClose}>
+                        <NavLink to="/trainers" className="nav-link" activeClassName="active" onClick={handleClose}>
                             Trainers
                         </NavLink>
-                        <NavLink to="/contact" className="nav-link" activeClassName="active" onClick={handleClose}>
+                        <NavLink to="/videos" className="nav-link" activeClassName="active" onClick={handleClose}>
                             Videos
                         </NavLink>
-                    </Nav>
-                    <Nav className="ms-auto">
-                        <NavLink to="/login" className="nav-link" activeClassName="active" onClick={handleClose}>
-                            <FaInfoCircle></FaInfoCircle>
-                        </NavLink>
-                        <NavLink to="/logout" className="nav-link" activeClassName="active" onClick={handleClose}>
-                            <FaDoorOpen></FaDoorOpen>
-                        </NavLink>
-
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>
@@ -48,19 +39,15 @@ function Header() {
                 </Offcanvas.Header>
                 <Offcanvas.Body>
                     <Nav className="flex-column">
-                        <NavLink exact to="/" className="nav-link" activeClassName="active" onClick={handleClose}>
+                        <NavLink exact to="/dictionary" className="nav-link" activeClassName="active" onClick={handleClose}>
                             Dictionary
                         </NavLink>
-                        <NavLink to="/about" className="nav-link" activeClassName="active" onClick={handleClose}>
+                        <NavLink to="/trainers" className="nav-link" activeClassName="active" onClick={handleClose}>
                             Trainers
                         </NavLink>
-                        <NavLink to="/contact" className="nav-link" activeClassName="active" onClick={handleClose}>
+                        <NavLink to="/videos" className="nav-link" activeClassName="active" onClick={handleClose}>
                             Videos
                         </NavLink>
-                        <NavLink to="/login" className="nav-link" activeClassName="active" onClick={handleClose}>
-                            Log out
-                        </NavLink>
-
                     </Nav>
                 </Offcanvas.Body>
             </Offcanvas>
