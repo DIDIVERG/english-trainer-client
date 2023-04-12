@@ -1,8 +1,88 @@
-.backdrop {
+
+
+.navbar-dark .navbar-nav .nav-link {
+    height: 100%;
+}
+
+.navbar {
+    height: 60px; /* ваше значение для высоты */
+}
+
+.navbar-nav {
+    display: flex;
+    align-items: center;
+}
+.nav-link:hover {
+    background-color: white;
+    color: black !important;
+}
+.nav-link.active {
+    background-color: white;
+    color: black !important;
+}
+
+.navbar-collapse {
+    display: none;
+}
+
+.navbar-dark .navbar-brand,
+.navbar-dark .navbar-nav .nav-link,
+.navbar-dark .navbar-nav .nav-item .dropdown-menu .dropdown-item {
+    color: white;
+}
+.navbar-dark .navbar-toggler {
+    border: none;
+}
+
+.offcanvas-header button[data-bs-dismiss="offcanvas"] {
+    color: white !important;
+}
+.navbar-dark .navbar-toggler-icon {
+}
+
+.offcanvas-header {
+    color: white;
+}
+
+.offcanvas-body .nav-link {
+    color: white;
+}
+.offcanvas {
+    width: 70%;
+}
+.offcanvas-width {
+    width: 70%;
+}
+.offcanvas.show {
+    transform: none;
+    max-width: 70%;
+}
+.offcanvas {
     position: fixed;
     top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    bottom: 0;
+    right: 0;
+    left: auto;
+    z-index: 1040;
+    visibility: hidden;
+    overflow-y: auto;
+    outline: 0;
+    background-color: #343a40;
+    transition: transform 0.3s ease-in-out, visibility 0s linear 0.3s;
+    width: 70% !important;
+    transform: translateX(100%);
 }
+.offcanvas-body .dropdown-item {
+    color: white;
+}
+.navbar-toggler-custom {
+    border: none;
+}
+
+.nav-wrapper {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+}
+
