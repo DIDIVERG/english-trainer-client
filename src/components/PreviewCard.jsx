@@ -7,8 +7,11 @@ const PreviewCard = ({ trainers }) => {
     return (
         <Row className="gx-3 gy-4 justify-content-center justify-content-md-start">
             {trainers.map((trainer) => (
-                <Col  xs={12} sm={6} md={4} lg={3} key={trainer.id}>
-                    <NavLink to={`/trainers/${trainer.id}`} className="nav-link text-decoration-none">
+                <Col xs={12} sm={6} md={4} lg={3} key={trainer.id}>
+                    <NavLink
+                        to={`/trainers/${trainer.id}`}
+                        className="text-decoration-none card-nav"
+                    >
                         <Card className="small">
                             <Card.Img variant="top" src={trainer.image} alt={trainer.name} />
                             <Card.Body>
@@ -21,4 +24,5 @@ const PreviewCard = ({ trainers }) => {
         </Row>
     );
 };
+
 export default PreviewCard;

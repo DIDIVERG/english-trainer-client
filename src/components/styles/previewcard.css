@@ -1,6 +1,16 @@
 .small {
     width: 20rem;
 }
+.card-nav:hover {
+    background-color: green;
+    opacity: 0.6;
+}
+
+
+.nav-link:hover {
+    background-color: green;
+    opacity: 60%;
+}
 
 @media (max-width: 576px) {
     .gx-3 {
@@ -9,8 +19,3 @@
     }
 }
 
-.nav-link:hover {
-    opacity: 60%;
-    background-color: #343a40;
-    cursor: pointer;
-}
