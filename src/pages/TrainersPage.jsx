@@ -1,10 +1,6 @@
 import React, { useState } from 'react';
 import '../App.css'
 import PreviewCard from "../components/PreviewCard";
-import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
-import Header from "../components/Header";
-import DictionaryPage from "./DictionaryPage";
-import {VideosPage} from "./VideosPage";
 export const TrainersPage = () => {
     const trainers = [
         {
@@ -41,7 +37,6 @@ export const TrainersPage = () => {
     return (
         <div className="container">
             <PreviewCard trainers={trainers} />
-
         </div>
 
     );
