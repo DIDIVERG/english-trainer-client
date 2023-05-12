@@ -1,0 +1,11 @@
+.nav-link {
+  color: white !important; /* изменение цвета текста */
+}
+
+.nav-link.active {
+  color: black !important; /* изменение цвета текста активной вкладки */
+}
+
+.nav-tabs {
+  margin-top: 20px; /* добавление margin сверху */
+}
